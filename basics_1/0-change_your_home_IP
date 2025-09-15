@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Changes the home IP
+
+echo "127.0.0.2   localhost" | sudo tee -a "$HOSTS_FILE" > /dev/null
+echo "8.8.8.8     facebook.com" | sudo tee -a "$HOSTS_FILE" > /dev/null
