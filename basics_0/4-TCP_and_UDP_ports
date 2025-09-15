@@ -1,4 +1,4 @@
 #!/bin/bash
 # Displays only listening socket
 
-netstat -lp
+sudo netstat -lp
