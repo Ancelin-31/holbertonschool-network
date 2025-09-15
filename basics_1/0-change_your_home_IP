@@ -1,4 +1,12 @@
 #!/usr/bin/env bash
-# Configures a server
+# Configures a server so localhost and facebook.com resolve correctly
 
-echo -e "8.8.8.8 facebook.com" >> /etc/hosts
+HOSTS_FILE="/etc/hosts"
+
+# Remove existing entries to avoid duplicates
+sudo sed -i '/[[:space:]]localhost$/d' "$HOSTS_FILE"
+sudo sed -i '/[[:space:]]facebook.com$/d' "$HOSTS_FILE"
+
+# Add the required mappings
+echo "127.0.0.2 localhost"   | sudo tee -a "$HOSTS_FILE" > /dev/null
+echo "8.8.8.8 facebook.com"  | sudo tee -a "$HOSTS_FILE" > /dev/null
