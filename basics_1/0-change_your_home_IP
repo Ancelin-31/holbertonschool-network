@@ -3,6 +3,9 @@
 
 HOSTS_FILE="/etc/hosts"
 
+# Backup original hosts file
+sudo cp "$HOSTS_FILE" "${HOSTS_FILE}.bak"
+
 # Remove existing entries to avoid duplicates
 sudo sed -i '/[[:space:]]localhost$/d' "$HOSTS_FILE"
 sudo sed -i '/[[:space:]]facebook.com$/d' "$HOSTS_FILE"
