@@ -1,4 +1,5 @@
 #!/bin/bash
+# Pings an IP address
 
 if [ $# -ne 1 ]
 
